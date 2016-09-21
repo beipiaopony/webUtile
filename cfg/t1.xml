@@ -1,0 +1,15 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:urn="urn:digichannel.fanuc.com">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <urn:req>
+         <pool>TEST</pool>
+         <functionName>ZHYPERION_SAP_003</functionName>
+         <format>xml</format>
+         <inputs>
+         <![CDATA[<I_GJAHR>2013</I_GJAHR><I_MONAT_END>5</I_MONAT_END><I_MONAT_START>1</I_MONAT_START>]]>
+         </inputs>
+         <tables></tables>
+      </urn:req>
+   </soapenv:Body>
+</soapenv:Envelope>

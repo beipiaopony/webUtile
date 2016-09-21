@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"  
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  
+    xmlns:tx="http://www.springframework.org/schema/tx"
+    xmlns:context="http://www.springframework.org/schema/context"  
+    xsi:schemaLocation="  
+    http://www.springframework.org/schema/beans   
+    http://www.springframework.org/schema/beans/spring-beans.xsd  
+    http://www.springframework.org/schema/tx
+    http://www.springframework.org/schema/tx/spring-tx.xsd
+    http://www.springframework.org/schema/context  
+    http://www.springframework.org/schema/context/spring-context.xsd">  
+      
+    <!-- 引入外部文件   
+    <context:property-placeholder location="cfg/jdbc.properties"/>  
+     -->
+    
+    <!-- 配置数据源 -->  
+    <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">  
+        <property name="driverClassName" value="oracle.jdbc.driver.OracleDriver"/>  
+        <property name="url" value="jdbc:oracle:thin:@localhost:1521:ORCL"/>  
+        <property name="username" value="ods"/>  
+        <property name="password" value="ods"/>  
+    </bean>  
+    
+        
+    <bean id="tableDao" class="com.noahark.webUtile.bean.TableDao">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+    
+    <bean id="project1" class="com.noahark.webUtile.bean.WebProject">
+    	<property name="wsdlLocation">
+    		<value><![CDATA[http://192.168.2.101:80/Produce/DigiChannelJCoConfig.nsf/executeFunction?OpenWebService]]></value>
+    	</property>
+    	<property name="requestFile" value="cfg/t1.xml" />
+    	<property name="tableName" value="T_SOAP_SAP_RMB" />
+    	<property name="dataPath" value="data" />
+    </bean>
+    
+    <bean id="webExecutor" class="com.noahark.webUtile.WebserviceExecutor">
+         <property name="projects">
+			<map>
+			<entry key="project1" value-ref="project1" />
+			</map>
+		</property>
+    </bean>
+    
+    <!--
+    <bean id="exceldao" class="com.noahark.excel.dao.ExcelDaoImpl">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+    
+    <bean id="imp" class="com.noahark.excel.ExcelImport">
+        <property name="dao" ref="exceldao"/>
+        <property name="rdao" ref="rdao"/>
+        <property name="cfgPath" value="/home/oracle/import/cfg"/>
+    </bean>
+     -->
+    <!--
+    <tx:annotation-driven transaction-manager="txManager"/>
+    <bean id="txManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+       
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
+    -->
+    
+    <!-- 配置DAO   
+    <bean id="questionDao" class="com.noahark.hrimport.dao.QuestionnaireDaoImpl">  
+        <property name="dataSource" ref="dataSource"/>  
+    </bean> 
+    
+    <bean id="excelReader" class="com.noahark.hrimport.excel.ReadExcel">  
+    </bean>  
+    
+    <bean id="assembleQuestion" class="com.noahark.hrimport.handle.AssenbleQuestionnaireImpl">  
+        <property name="titleRowNum" value="2"/>
+        <property name="dataStartIndex" value="3"/>
+        <property name="dataEndIndex" value="42"/> 
+        <property name="dao" ref="questionDao"/> 
+    </bean> 
+    
+    <bean id="excelConf1" class="com.noahark.hrimport.excel.ExcelConfig">  
+        <property name="path" value="E:\\impdata\\"/>
+        <property name="backPath" value="E:\\impdata\\backup"/>
+        <property name="columnNum" value="15"/> 
+        <property name="rowNum" value="46"/> 
+        <property name="startIndex" value="2"/> 
+        <property name="impMode" value="1"/> 
+        <property name="assenble" ref="assembleQuestion"/>  
+    </bean>   
+    
+    <bean id="importExcel" class="com.noahark.hrimport.handle.ImportExcel">  
+        <property name="reader" ref="excelReader"/>
+        <property name="confs">
+            <list>
+               <ref bean="excelConf1" />
+            </list> 
+        </property>
+    </bean> 
+   -->
+      
+</beans> 

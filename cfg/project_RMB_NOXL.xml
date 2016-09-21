@@ -1,0 +1,33 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:bo2="BO2GDYS_C40A_NOXL_NOQD">
+<soapenv:Header>
+	<bo2:QaaWSHeader>
+         <!--Optional:-->
+         <bo2:sessionID>?</bo2:sessionID>
+         <!--Optional:-->
+         <bo2:serializedSession>?</bo2:serializedSession>
+         <!--Optional:-->
+         <bo2:ClientType>?</bo2:ClientType>
+         <!--Optional:-->
+         <bo2:AuditingObjectID>?</bo2:AuditingObjectID>
+         <!--Optional:-->
+         <bo2:AuditingObjectName>?</bo2:AuditingObjectName>
+      </bo2:QaaWSHeader>
+   </soapenv:Header>
+  <soapenv:Body>
+      <bo2:runQueryAsAService>
+         <bo2:login>11116096</bo2:login>
+        <bo2:password>123qwe</bo2:password>
+         <!--Zero or more repetitions:-->
+         <bo2:XZBM>3C</bo2:XZBM>
+        <!--Zero or more repetitions:-->
+         <bo2:RBUSA></bo2:RBUSA>
+         <!--Zero or more repetitions:-->
+         <bo2:ACCOUNT></bo2:ACCOUNT>
+         <bo2:ReportDate>12.2014</bo2:ReportDate>
+         <bo2:Company_To></bo2:Company_To>
+         <bo2:Company_From></bo2:Company_From>
+         <bo2:Account></bo2:Account>
+      </bo2:runQueryAsAService>
+   </soapenv:Body>
+ </soapenv:Envelope>

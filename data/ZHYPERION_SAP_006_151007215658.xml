@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ZHYPERION_SAP_006>
+    <TABLES>
+        <IT_VALUE>
+            <item>
+                <ZYEAR>2015</ZYEAR>
+                <ZMONAT>03</ZMONAT>
+                <ZKOSTL>1000200003</ZKOSTL>
+                <ZYSSY>KM013608</ZYSSY>
+                <VALUE>0</VALUE>
+            </item>
+            <item>
+                <ZYEAR>2015</ZYEAR>
+                <ZMONAT>04</ZMONAT>
+                <ZKOSTL>1000200003</ZKOSTL>
+                <ZYSSY>KM013608</ZYSSY>
+                <VALUE>6870.00</VALUE>
+            </item>
+            <item>
+                <ZYEAR>2015</ZYEAR>
+                <ZMONAT>05</ZMONAT>
+                <ZKOSTL>1000200003</ZKOSTL>
+                <ZYSSY>KM013608</ZYSSY>
+                <VALUE>-444.00</VALUE>
+            </item>
+            <item>
+                <ZYEAR>2015</ZYEAR>
+                <ZMONAT>06</ZMONAT>
+                <ZKOSTL>1000200003</ZKOSTL>
+                <ZYSSY>KM013608</ZYSSY>
+                <VALUE>777288.00</VALUE>
+            </item>
+        </IT_VALUE>
+    </TABLES>
+</ZHYPERION_SAP_006>
